@@ -2,12 +2,12 @@
 <html lang="pt-br">
 
 <head>
-  <title>Aplicação de monitoramento Bloco 3</title>
+  <title>Aplicação de monitoramento Bloco 2</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">git status
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Incluindo scripts JavaScript de módulos. -->
   <script type="module" src="js/app.js"></script>
-  <<!--<script type="module" src="js/busca.js"></script> REMOVER -->
+  <!--<script type="module" src="js/busca.js"></script> REMOVER -->
   <script type="module" src="js/botoes.js"></script>
 
   <!-- Incluindo arquivo CSS para estilos. -->
@@ -16,10 +16,10 @@
 
   <!-- Incluindo scripts JavaScript de módulos dos blocos. -->
   <script type="module" src="js/config_db_supabase_blocos.js"></script>
-  <script type="module" src="js/script_bloco3.js"></script>
+  <script type="module" src="js/script_bloco2.js"></script>
 
   <!-- Incluindo scripts JavaScript e CSS de módulos dos Gráficos blocos. -->
-  <script type="module" src="js/grafico_bloco3.js"></script>
+  <script type="module" src="js/grafico_bloco2.js"></script>
   <link rel="stylesheet" href="css/grafico.css">
 
   <!-- Importação da biblioteca Chart.js -->
@@ -93,29 +93,29 @@
 </nav>
 
 
+
 <!----------------- Seção principal do conteúdo, incluindo elementos de interação e layout. ------------------>
 <section class="content">
   <div class="left-content">
-
-
 
     <!------------------------------------  Constrói cenário e cards de próximos eventos  --------------------->
 
     <!--  CARD 1 -->
     <div class="upcoming-events">
-      <h1>MONITORAMENTO BLOCO  3</h1>
+      <h1>MONITORAMENTO BLOCO 2</h1>
       <div class="event-container">
+
         <!--  originalmente insere a figura -->
         <div class="card event-card">
           <div class="event-header">
-            <!----------------------------------------------BLOCO 3------------------------------------------------------>
-            <div class="container" id="bloco3">
+            <!----------------------------------------------BLOCO 2------------------------------------------------------>
+            <div class="container" id="bloco2">
               <!-- Criação e gestão para imagens da Caixa d'Água -->
               <div class="linha-superior">
                 <div class="water-wrapper">
                   <div class="water-container">
                     <div class="level-indicator"></div>
-                    <div class="water" id="water-level3"></div>
+                    <div class="water" id="water-level2"></div>
                   </div>
                   <div class="status-nivel-de-agua">
                     <div class="status-nivel">Nível de água em:</div>
@@ -126,7 +126,7 @@
                 <div class="bomba-de-agua">
                   <div class="bomba-1"></div>
                   <div class="status-bomba-de-agua-1">
-                    <div class="status-bomba-1">Status da Bomba 3:</div>
+                    <div class="status-bomba-1">Status da Bomba 2:</div>
                     <div class="capsula-status"></div>
                   </div>
                 </div>
@@ -135,7 +135,7 @@
               <div class="linha-inferior">
                 <div class="amperimetro">
                   <div class="escala-amperímetro">
-                    <div class="ponteiro-amperimetro" id="ponteiro-amperimetro3"></div>
+                    <div class="ponteiro-amperimetro" id="ponteiro-amperimetro2"></div>
                   </div>
                   <div class="status-amperimetro-1">
                     <div class="capsula-amperimetro"></div>
@@ -144,7 +144,7 @@
 
                 <div class="voltimetro">
                   <div class="escala-voltimetro">
-                    <div class="ponteiro-voltimetro" id="ponteiro-voltimetro3"></div>
+                    <div class="ponteiro-voltimetro" id="ponteiro-voltimetro2"></div>
                   </div>
                   <div class="status-voltimetro-1">
                     <div class="capsula-voltimetro"></div>
@@ -152,13 +152,11 @@
                 </div>
               </div>
             </div>
-            <!----------------------------------------------FIM 3------------------------------------------------------>
-
+            <!----------------------------------------------FIM 2------------------------------------------------------>
           </div>
         </div>
       </div>
     </div>
-
 
 
 
@@ -169,7 +167,7 @@
         <!--  originalmente insere a figura -->
         <div class="card event-card1">
           <div class="event-header">
-            <!----------------------------------------------GRÁFICO BLOCO 3----------------------------------------------->
+            <!----------------------------------------------GRÁFICO BLOCO 2----------------------------------------------->
             <!-- Gráfico Nível da Água -->
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-8 chart-container grafico-nivel">
@@ -178,7 +176,7 @@
                 </div>
               </div>
             </div>
-            <!----------------------------------------FIM GRÁFICO BLOCO 3------------------------------------------------->
+            <!----------------------------------------FIM GRÁFICO BLOCO 2------------------------------------------------->
           </div>
         </div>
       </div>
@@ -187,9 +185,14 @@
     <!--  CARD 3 -->
 
 
+
+
+
+
+
+    <!-- Área do código para criação do comentários e avaliações do Past Event Reviews -->
+
   </div>
-
-
 
 
   <!-- CRIA CONTROLE DA ÁREA A DIREITA DA TELA COM OS CONTEUDO ANALYTICS, GRÁFICOS E CONTATOS -->
