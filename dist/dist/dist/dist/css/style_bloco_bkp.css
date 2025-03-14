@@ -1,0 +1,385 @@
+/* Define cor do pano de fundo da tela --- ORIGINAL */
+
+/* Estilos para o título principal */
+#titulo-principal {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+}
+
+/*-------------------------- CONTROLE DO TAMANHO DO CONATINER QUE CONTEM TODAS AS FIGURAS DA APLICAÇÃO--------------------- */
+.container {
+  width: 100%;
+  display: flex; /* Mantém os elementos lado a lado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: flex-start; /* Mantém o topo alinhado */
+  gap: 1px; /* Espaço entre os elementos */
+  flex-wrap: nowrap; /* Impede que os elementos quebrem linha */
+  position: absolute;
+  margin: 2px auto 4px auto; /* Espaçamento acima e abaixo */
+  padding: 1px;
+  transform: scale(0.92);
+}
+
+
+/* -----------------------CONTROLE DE POSICIONAMENTO ABSOLUTO DE OBJETOS NA TELA----------------------- */
+
+
+/*----------------------------------------  CAIXA DE ÁGUA  ---------------------------------------------*/
+/* Ajusta tamanho posição das imagens da caixa, água e regua de nível ao mesmo tempo */
+.water-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+/* Ajusta tamanho posição figura caixa d'água */
+.water-container {
+  width: 200px;
+  height: 300px;
+  background-image: url("../img/caixa.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém proporção da caixa */
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Garante que a água cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
+}
+
+
+
+/*----------------------------------------  RÉGUA DE NÍVEL  -----------------------------------------------*/
+/* Ajusta tamanho posição da figura régua de nível */
+.level-indicator {
+  position: absolute;
+  width: 100%; /* Para cobrir toda a caixa */
+  max-width: none; /* Impede que a largura seja limitada ao container */
+  height: 100%; /* Para ficar sobre a caixa */
+  top: 23px; /* Ajuste este valor para baixar a régua */
+  left: -5%; /* Ajuste a posição para alinhar corretamente */
+  background-image: url("../img/regua_de_nivel.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém a proporção correta */
+  background-position: right center; /* Alinha a régua à direita */
+  z-index: 20; /* Maior que a água para ficar visível */
+  pointer-events: none; /* Impede que a régua bloqueie cliques */
+}
+
+
+/*-------------------------------------  FIGURA DA ÁGUA  -----------------------------------------------*/
+/* Ajusta tamanho posição da figura água */
+.water {
+  width: 85%; /* Reduz a largura da água */
+  height: 0%;
+  background-image: url("../img/agua.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Centraliza */
+  transform: translateX(-50%); /* Ajusta para o centro */
+  transition: height 1s ease-in-out;
+  max-height: 79%; /* Limita a altura para 90% da altura da caixa */
+}
+
+
+
+/* ---------------------------IFORMAÇÃO DE NÍVEL COM A CÁPSULA DE ESTATUS DA ÁGUA ---------------------------/
+ */
+/* Ajusta tamanho posição do Status do nível de água */
+.status-nivel-de-agua {
+  position: absolute;
+  top: -10%; /* Ajuste vertical */
+  left: 55%; /* Ajuste horizontal */
+  transform: translate(-50%, -50%); /* Centraliza o container */
+  width: 200px; /* Tamanho do container */
+  height: 300px; /* Tamanho do container */
+  transform: scale(0.8); /* Aumenta o tamanho de todos os elementos dentro do container */
+}
+
+/* Ajusta tamanho e posição do texto título "Nível da àguam em:" no status da água */
+.status-nivel {
+  color: white;
+  position: absolute;
+  top: -5%; /* Ajuste vertical */
+  left: 5%; /* Ajuste horizontal */
+  transform: translate(-50%, -50%); /* Centraliza o container */
+  width: 200px; /* Tamanho do container */
+  height: 300px; /* Tamanho do container */
+  transform: scale(1); /* Aumenta o tamanho de todos os elementos dentro do container */
+}
+
+/* Ajustar moldura em forma de cápsula e o texto dentro da noldura contendo a infromação do Status da água */
+.capsula-nivel {
+  margin-top: 10px; /* Espaço entre o texto e a moldura */
+  width: 30%; /* Moldura terá a largura do container acima */
+  height: 30px; /* Altura da moldura */
+  background-color: #262626; /* Cor de fundo da moldura */
+  border-radius: 30px; /* Forma de cápsula, arredonda as bordas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de destaque */
+  /* Ajustes para centralizar o texto */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+
+
+/*---------------------------------------------  BOMBA  -----------------------------------------------*/
+/* Ajusta tamanho posição da imagen da bomba de água */
+.bomba-de-agua {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+/* Ajusta tamanho posição da figura bambda de água */
+.bomba-1 {
+  width: 200px;
+  height: 300px;
+  background-image: url("../img/bomba_1.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém proporção da bomba */
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Garante que a bomba cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
+}
+
+
+/* Ajusta tamanho e posição do texto título "Status da Bomba 1:" no status da bomba de água */
+.status-bomba-de-agua-1 {
+  color: white;
+  position: absolute;
+  top: 90%; /* Ajuste vertical */
+  left: 35%; /* Ajuste horizontal */
+  transform: translate(-50%, -50%); /* Centraliza o container */
+  width: 200px; /* Tamanho do container */
+  height: 300px; /* Tamanho do container */
+  transform: scale(1.1); /* Aumenta o tamanho de todos os elementos dentro do container */
+}
+
+/* Ajustar moldura em forma de cápsula e o texto dentro da noldura contendo a infromação do Status da bomba */
+.capsula-status {
+  margin-top: 10px; /* Espaço entre o texto e a moldura */
+  width: 100%; /* Moldura terá a largura do container acima */
+  height: 30px; /* Altura da moldura */
+  background-color: #2c3e50; /* Cor de fundo da moldura */
+  border-radius: 30px; /* Forma de cápsula, arredonda as bordas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de destaque */
+  /* Ajustes para centralizar o texto */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+/*-----------------------------------------  AMPERÍMETRO  --------------------------------------------------*/
+
+/* Ajusta tamanho posição da imagen do amperímetro, escala e ponteiro */
+.amperimetro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+/*----ESCALA------*/
+/* Ajusta tamanho posição figura da escala do amperímetro */
+.escala-amperímetro {
+  width: 200px;
+  height: 300px;
+  background-image: url("../img/escala_amperimetro.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém proporção do amperímetro */
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Garante que o amperímetro cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
+}
+
+/*----PONTEIRO------*/
+/* Ajusta tamanho posição figura do ponteiro do amperímetro */
+.ponteiro-amperimetro {
+  width: 200px;
+  height: 300px;
+  background-image: url("../img/ponteiro_amperimetro.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém proporção do amperímetro */
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Garante que o amperímetro cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
+}
+
+/* Ajustar moldura em forma de cápsula e o texto dentro da noldura contendo a infromação do Amperimetro da bomba-1 */
+.status-amperimetro-1 {
+  color: white;
+  position: absolute;
+  top: 72%; /* Ajuste vertical */
+  left: 38%; /* Ajuste horizontal */
+  transform: translate(-50%, -50%); /* Centraliza o container */
+  width: 200px; /* Tamanho do container */
+  height: 300px; /* Tamanho do container */
+  transform: scale(1.1); /* Aumenta o tamanho de todos os elementos dentro do container */
+}
+
+/* Ajuste texto dentro da froma de cápsula do Amperimetro da bomba-1 */
+.capsula-amperimetro {
+  margin-top: 10px; /* Espaço entre o texto e a moldura */
+  width: 30%; /* Moldura terá a largura do container acima */
+  height: 30px; /* Altura da moldura */
+  background-color: #262626; /* Cor de fundo da moldura */
+  border-radius: 30px; /* Forma de cápsula, arredonda as bordas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de destaque */
+  /* Ajustes para centralizar o texto */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+/*--------------------------------------------  VOLTÍMETRO  ------------------------------------------*/
+/* Ajusta tamanho posição da imagen do voltimetro, escala e ponteiro */
+.voltimetro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+/*----ESCALA------*/
+/* Ajusta tamanho posição da figura escala do voltimetro */
+.escala-voltimetro {
+  width: 200px;
+  height: 300px;
+  background-image: url("../img/escala_voltimetro.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém proporção do voltimetro */
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Garante que o voltimetro cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
+}
+
+/*----PONTEIRO------*/
+/* Ajusta tamanho posição figura ponteiro do voltimetro */
+.ponteiro-voltimetro {
+  width: 200px;
+  height: 300px;
+  background-image: url("../img/ponteiro_voltimetro.svg");
+  background-repeat: no-repeat;
+  background-size: contain; /* Mantém proporção do voltimetro */
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Garante que o voltimetro cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
+}
+
+/* Ajustar moldura em forma de cápsula e o texto dentro da noldura contendo a infromação do voltímetro da bomba-1 */
+.status-voltimetro-1 {
+  color: white;
+  position: absolute;
+  top: 72%; /* Ajuste vertical */
+  left: 38%; /* Ajuste horizontal */
+  transform: translate(-50%, -50%); /* Centraliza o container */
+  width: 200px; /* Tamanho do container */
+  height: 300px; /* Tamanho do container */
+  transform: scale(1.1); /* Aumenta o tamanho de todos os elementos dentro do container */
+}
+
+/* Ajuste texto dentro da froma de cápsula do voltimetro da bomba-1 */
+.capsula-voltimetro {
+  margin-top: 10px; /* Espaço entre o texto e a moldura */
+  width: 30%; /* Moldura terá a largura do container acima */
+  height: 30px; /* Altura da moldura */
+  background-color: #262626; /* Cor de fundo da moldura */
+  border-radius: 30px; /* Forma de cápsula, arredonda as bordas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de destaque */
+  /* Ajustes para centralizar o texto */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+/*----------------------------------------------- MEDIA QUERIES -------------------------------------------------*/
+
+/*------------------------ MEDIA QUERIES Tela 450px ------------------------*/
+@media (max-width: 450px) {
+  #titulo-principal {
+    font-size: 20px;
+  }
+  .container {
+    transform: scale(0.25);
+  }
+}
+
+/* ==================== NOVAS REGRAS PARA MOBILE FIRST ==================== */
+
+/*------------------------ MEDIA QUERIES Tela 760px ------------------------*/
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column; /* Coloca os elementos em coluna */
+    align-items: center; /* Centraliza os elementos */
+    gap: 20px; /* Espaço entre os elementos */
+  }
+
+  .water-wrapper, .bomba-de-agua {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 300px; /* Limita a largura máxima */
+  }
+
+  .voltimetro, .amperimetro {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 300px; /* Limita a largura máxima */
+  }
+
+  /* Ajustes para o gráfico de nível de água */
+  .graficos {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 100%; /* Limita a largura máxima */
+  }
+
+  #graficoNiveis {
+    width: 100% !important; /* Garante que o gráfico ocupe toda a largura */
+    height: auto !important; /* Ajusta a altura automaticamente */
+  }
+}

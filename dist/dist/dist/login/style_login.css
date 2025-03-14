@@ -1,0 +1,456 @@
+/* Definição de estilo global para todos os elementos */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"poppins",sans-serif;
+}
+
+/* Estilo para  cor de fundo co corpo da página */
+body{
+    background-color: #060528FF;
+
+}
+
+/* Estilo para o contêiner principal */
+.container{
+    background:#fff;
+    width:450px;
+    padding:1.5rem;
+    margin:80px auto;
+    border-radius:10px;
+    box-shadow:0 20px 35px rgba(43, 43, 51, 0.9);
+}
+
+/* Estilo para os formulários */
+form{
+    margin:0 2rem;
+}
+
+/* Estilo para o título dos formulários */
+.form-title{
+    font-size:1.5rem;
+    font-weight:bold;
+    text-align:center;
+    padding:1.3rem;
+    margin-bottom:0.4rem;
+}
+
+/* Estilo para os campos de entrada */
+input{
+    color:inherit;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    padding-left:1.5rem;
+    font-size:15px;
+}
+
+/* Estilo para o grupo de entrada */
+.input-group{
+    padding:1% 0;
+    position:relative;
+
+}
+
+/* Estilo para os ícones nos campos de entrada */
+.input-group i{
+    position:absolute;
+    color:black;
+}
+
+/* Estilo para o campo de entrada quando focado */
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border-bottom:2px solid hsl(327,90%,28%);
+}
+
+/* Estilo para o placeholder dos campos de entrada */
+input::placeholder{
+    color:transparent;
+}
+
+/* Estilo para os rótulos dos campos de entrada */
+label{
+    color:#757575;
+    position:relative;
+    left:1.2em;
+    top:-1.3em;
+    cursor:auto;
+    transition:0.3s ease all;
+}
+
+/* Estilo para os rótulos dos campos de entrada quando focados ou preenchidos */
+input:focus~label,input:not(:placeholder-shown)~label{
+    top:-3em;
+    color:hsl(327,90%,28%);
+    font-size:15px;
+}
+
+/* Estilo para o link de recuperação de senha */
+.recover{
+    text-align:right;
+    font-size:1rem;
+    margin-bottom:1rem;
+
+}
+
+/* Estilo para o link de recuperação de senha */
+.recover a{
+    text-decoration:none;
+    color:rgb(125,125,235);
+}
+
+/* Estilo para o link de recuperação de senha ao passar o mouse */
+.recover a:hover{
+    color:blue;
+    text-decoration:underline;
+}
+
+/* Estilo para os botões */
+button{
+    font-size:1.1rem;
+    padding:8px 0;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    width:100%;
+    background:rgb(125,125,235);
+    color:white;
+    cursor:pointer;
+    transition:0.9s;
+}
+
+/* Estilo para os botões ao passar o mouse */
+button:hover{
+    background:#07001f;
+}
+
+/* Estilo para o texto "ou" */
+.or{
+    font-size:1.1rem;
+    margin-top:0.5rem;
+    text-align:center;
+}
+
+/* Estilo para os ícones sociais */
+.icons{
+    text-align:center;
+}
+
+/* Estilo para os ícones sociais */
+.icons i{
+    color:rgb(125,125,235);
+    padding:0.8rem 1.5rem;
+    border-radius:10px;
+    font-size:1.5rem;
+    cursor:pointer;
+    border:2px solid #dfe9f5;
+    margin:0 15px;
+    transition:1s;
+}
+
+/* Estilo para os ícones sociais ao passar o mouse */
+.icons i:hover{
+    background:#07001f;
+    font-size:1.6rem;
+    border:2px solid rgb(125,125,235);
+}
+
+/* Estilo para os links de navegação */
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 4rem;
+    margin-top:0.9rem;
+    font-weight:bold;
+}
+
+/* Estilo para os botões de alternância entre os formulários */
+#signUpButton, #signInButton{
+    color:rgb(125,125,235);
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+}
+
+/* Estilo para os botões de alternância ao passar o mouse */
+#signUpButton:hover, #signInButton:hover {
+    text-decoration:underline;
+    color:blue;
+}
+
+/* Estilo para a mensagem de feedback */
+.messageDiv{
+    background-color:hsl(327,90%,28%);
+    color:white;
+    padding:10px 20px;
+    margin:10px;
+    border-radius: 5px;
+    font-size:1rem;
+    opacity:0;
+    animation:fadeOut 7s forwards;
+
+}
+
+/* Estilo específico para a mensagem de feedback no formulário de registro */
+#signUpMessage {
+    position: absolute; /* ou relative, dependendo de como você deseja posicionar o elemento */
+    top: 50%; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o elemento */
+    padding: 15px;
+    background-color: #f8d7da; /* Cor de fundo da mensagem */
+    color: #721c24; /* Cor do texto da mensagem */
+    border: 1px solid #f5c6cb; /* Borda da mensagem */
+    border-radius: 5px;
+    width: 80%; /* Largura da mensagem */
+    text-align: center; /* Centraliza o texto */
+    z-index: 1000; /* Certifique-se de que a mensagem esteja acima de outros elementos */
+}
+
+
+
+/* Definições globais da página para mnodos dia e noite. */
+:root {
+    --bg-body: rgb(245, 247, 255);
+    --primary-color: rgb(42, 51, 65);
+    --primary-hover-color: rgb(158, 161, 166);
+    --scrollbar-color: rgba(131, 135, 193, 0.4);
+    --card-bg-color: rgba(230, 231, 247, 0.1);
+    --pop-bg-color: rgb(245, 247, 255, 0.9);
+    --star-color: #ddcc14;
+    --border-color: rgba(131, 135, 193, 0.4);
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --accent-color: rgb(194, 33, 105);
+}
+
+
+/* Definições  de estilo da figura na pagina de Login. */
+.condominio-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Garante que a imagem e o texto fiquem em coluna */
+  justify-content: flex-start; /* Alinha o conteúdo ao topo */
+  align-items: center; /* Centraliza os itens na horizontal */
+  border-right: 1px solid var(--border-color);
+  padding: 12px 0 10px;
+  overflow: hidden;
+  font-family: inherit;
+  gap: 15px; /* Adiciona o espaço entre a imagem e o texto */
+}
+
+.condominio-info img {
+  max-width: 160px; /* Ajuste o valor conforme necessário */
+  aspect-ratio: 1/1; /* Garante que a imagem seja quadrada */
+  object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+  border-radius: 50%; /* Deixa a imagem circular */
+  padding: 20px; /* Adiciona um padding para o contorno da imagem */
+}
+
+.condominio-info p {
+  color: white;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4; /* Ajusta o espaçamento das linhas */
+  margin: 0; /* Remove a margem do parágrafo */
+}
+
+
+/* Estilo para o título SISTEMA DE MONITORAMENTP*/
+.titulo-topo {
+  position: fixed; /* Fixa o título no topo */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  font-size: 2rem;
+  font-weight: bold;
+  color: white; /* Escolha a cor que desejar */
+  margin: 30px 0 0 0; /* Adiciona espaço acima do título */
+  z-index: 1000; /* Garante que o título fique acima de outros elementos */
+  text-align: center;
+}
+
+
+
+/*---------------------------------- Ajustes de responsividade --------------------------------------*/
+
+@media screen and (max-width: 912px) {
+  .container {
+    width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+    margin: 80px auto 20px; /* Garante espaço suficiente entre os elementos */
+    padding: 1rem;
+    position: relative;
+    z-index: 1; /* Mantém o formulário sobre os outros elementos */
+  }
+
+  .titulo-topo {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .condominio-info {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    padding-top: 50px;
+  }
+
+  .condominio-info img {
+    max-width: 100px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .condominio-info p {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+
+
+@media screen and (max-width: 820px) {
+  .container {
+    width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+    margin: 80px auto 20px; /* Garante espaço suficiente entre os elementos */
+    padding: 1rem;
+    position: relative;
+    z-index: 1; /* Mantém o formulário sobre os outros elementos */
+  }
+
+  .titulo-topo {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .condominio-info {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    padding-top: 50px;
+  }
+
+  .condominio-info img {
+    max-width: 100px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .condominio-info p {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%; /* Ajusta a largura para caber melhor em telas menores */
+    margin: 80px auto 20px; /* Garante espaço suficiente entre os elementos */
+    padding: 1rem;
+    position: relative;
+    z-index: 1; /* Mantém o formulário sobre os outros elementos */
+  }
+
+  .titulo-topo {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .condominio-info {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    padding-top: 50px;
+  }
+
+  .condominio-info img {
+    max-width: 100px;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .condominio-info p {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .titulo-topo {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .container {
+    width: 95%;
+    padding: 0.8rem;
+    margin-top: 100px; /* Ajusta para evitar sobreposição */
+  }
+
+  .condominio-info {
+    padding-top: 40px;
+  }
+
+  .condominio-info img {
+    max-width: 80px; /* Reduz a imagem para caber melhor */
+  }
+
+  .condominio-info p {
+    font-size: 0.9rem;
+  }
+
+  .input-group {
+    padding: 3% 0;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+}

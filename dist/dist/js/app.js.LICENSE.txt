@@ -1,0 +1,5 @@
+//! Active Navbar Item
+
+//! Criação do gráfico Chart JS
+
+//! Essa função population, cria elementos de lista (<li>) para cada rótulo de evento do grafico mostrando sua respectiva porcentagem

@@ -1,0 +1,1 @@
+const path=require("path");module.exports={entry:{app:"./js/app.js"},output:{path:path.resolve(__dirname,"dist"),clean:!0,filename:"./js/app.js"}};
