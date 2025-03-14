@@ -1,0 +1,1 @@
+import{supabase}from"./config.js";async function getDatabaseReference(e){const a=e.split("/"),r=a[0],o=a[1];let{data:s,error:t}=await supabase.from(r).select("*").eq("id",o);return t?(console.error("Erro ao buscar dados do Supabase:",t),null):{val:()=>s[0]}}export{getDatabaseReference};
