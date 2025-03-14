@@ -1,0 +1,1 @@
+const{merge}=require("webpack-merge"),common=require("./webpack.common.js");module.exports=merge(common,{mode:"development",devtool:"inline-source-map",devServer:{liveReload:!0,hot:!0,open:!0,static:["./"]}});

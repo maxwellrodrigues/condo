@@ -63,15 +63,16 @@ h1 {
 
 /* Ajusta tamanho posição figura caixa d'água */
 .water-container {
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
   height: 300px;
   background-image: url("../img/caixa.svg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; /* Mantém proporção da caixa */
   background-position: center;
   position: relative;
-  overflow: visible;
+  display: flex;
+  align-items: flex-end; /* Garante que a água cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
 }
 
 
@@ -97,7 +98,7 @@ h1 {
 /*-------------------------------------  FIGURA DA ÁGUA  -----------------------------------------------*/
 /* Ajusta tamanho posição da figura água */
 .water {
-  width: 85%;
+  width: 85%; /* Reduz a largura da água */
   height: 0%;
   background-image: url("../img/agua.svg");
   background-repeat: no-repeat;
@@ -105,10 +106,10 @@ h1 {
   background-position: bottom;
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; /* Centraliza */
+  transform: translateX(-50%); /* Ajusta para o centro */
   transition: height 1s ease-in-out;
-  will-change: height;
+  max-height: 79%; /* Limita a altura para 90% da altura da caixa */
 }
 
 

@@ -14,38 +14,17 @@ h1 {
 
 /*-------------------------- CONTROLE DO TAMANHO DO CONATINER QUE CONTEM TODAS AS FIGURAS DA APLICAÇÃO--------------------- */
 .container {
-  display: flex;
-  flex-direction: column; /* Organiza em colunas (duas linhas) */
-  align-items: center; /* Centraliza os elementos */
-  gap: 20px; /* Espaço entre as linhas */
-  margin: 4px auto 4px auto; /* Adiciona margem acima e abaixo. */
+  width: 100%;
+  display: flex; /* Mantém os elementos lado a lado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: flex-start; /* Mantém o topo alinhado */
+  gap: 1px; /* Espaço entre os elementos */
+  flex-wrap: nowrap; /* Impede que os elementos quebrem linha */
+  position: absolute;
+  margin: 2px auto 4px auto; /* Espaçamento acima e abaixo */
+  padding: 1px;
+  transform: scale(0.92);
 }
-
-.linha-superior,
-.linha-inferior {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Espaço entre os elementos */
-}
-
-.linha-superior {
-  flex-wrap: nowrap; /* Impede quebra de linha */
-}
-
-.linha-inferior {
-  flex-wrap: nowrap; /* Mantém os elementos lado a lado */
-}
-
-/* Estrutura dos Cards de Eventos*/
-.event-card {
-  display: grid;
-  grid-auto-flow: dense;
-  grid-template-rows: 2fr 2fr 2fr; /* Define a proporção das linhas do quadro qie envolve os blocos. */
-  padding: 8px;
-  width: 100%; /* Ocupa toda a largura da tela */
-  margin-bottom: 20px; /* Espaço entre os cards */
-}
-
 
 
 /* -----------------------CONTROLE DE POSICIONAMENTO ABSOLUTO DE OBJETOS NA TELA----------------------- */
@@ -63,15 +42,16 @@ h1 {
 
 /* Ajusta tamanho posição figura caixa d'água */
 .water-container {
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
   height: 300px;
   background-image: url("../img/caixa.svg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; /* Mantém proporção da caixa */
   background-position: center;
   position: relative;
-  overflow: visible;
+  display: flex;
+  align-items: flex-end; /* Garante que a água cresça de baixo para cima */
+  /*overflow: hidden; /* Impede vazamentos */
 }
 
 
@@ -97,7 +77,7 @@ h1 {
 /*-------------------------------------  FIGURA DA ÁGUA  -----------------------------------------------*/
 /* Ajusta tamanho posição da figura água */
 .water {
-  width: 85%;
+  width: 85%; /* Reduz a largura da água */
   height: 0%;
   background-image: url("../img/agua.svg");
   background-repeat: no-repeat;
@@ -105,10 +85,10 @@ h1 {
   background-position: bottom;
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50%; /* Centraliza */
+  transform: translateX(-50%); /* Ajusta para o centro */
   transition: height 1s ease-in-out;
-  will-change: height;
+  max-height: 79%; /* Limita a altura para 90% da altura da caixa */
 }
 
 
@@ -360,94 +340,46 @@ h1 {
   text-align: center;
 }
 
-/* --------------------------------------------------------------------------------------------------------------*/
-/*                                            --- MEDIA QUERIES ---                                              */
-/* --------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------- MEDIA QUERIES -------------------------------------------------*/
 
-/*------------------------ MEDIA QUERIES Tela 1200px ------------------------*/
-@media (min-width: 1200px) {
+/*------------------------ MEDIA QUERIES Tela 450px ------------------------*/
+@media (max-width: 450px) {
+  #titulo-principal {
+    font-size: 20px;
+  }
   .container {
-    width: 100%;
-    display: flex; /* Mantém os elementos lado a lado */
-    flex-direction: row; /* Altera para linha em telas grandes */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Mantém o topo alinhado */
-    gap: 1px; /* Espaço entre os elementos */
-    flex-wrap: nowrap; /* Impede que os elementos quebrem linha */
-    position: absolute;
-    margin: 1px auto 4px auto; /* Espaçamento acima e abaixo */
-    padding: 1px;
-    transform: scale(0.92);
+    transform: scale(0.25);
   }
-
-  .content {
-    grid-template-columns: 75% 25%; /* Volta ao layout de duas colunas */
-    grid-template-rows: auto; /* Remove a definição de linhas */
-    left: 100px;
-  }
-
-  .left-content {
-    grid-row: auto; /* Remove a definição de linha */
-  }
-
-  .right-content {
-    grid-row: auto; /* Remove a definição de linha */
-    border-left: 1px solid var(--border-color); /* Restaura a borda lateral */
-  }
-
-
-  .main-menu {
-    width: 100px;
-  }
-
-  .condominio-info img {
-    padding: 12px;
-  }
-
-  .condominio-info p {
-    line-height: 1.1;
-    margin: -5px 0 10px;
-  }
-
-  .nav-icon {
-    text-align: center;
-    transform: translateY(2px);
-    font-size: 2rem; /* Aumenta o ícone, ajustado corretamente */
-  }
-
-  .nav-item a {
-    display: flex;
-    flex-direction: column; /* Ícone e texto em coluna */
-    align-items: center; /* Centralizar ícone e texto */
-    text-decoration: none; /* Remover sublinhado */
-  }
-
-  .nav-text {
-    display: block; /* Mostrar o texto */
-    text-align: center; /* Centralizar o texto abaixo do ícone */
-    margin-top: 12px; /* Espaço entre o ícone e o texto */
-    color: var(--primary-color); /* Definir cor do texto */
-    font-size: 0.9rem; /* Ajustar tamanho da fonte */
-  }
-
-  .water-wrapper,
-  .bomba-de-agua,
-  .amperimetro,
-  .voltimetro{
-    width: 210px;
-  }
-
-  /* Estrutura dos Cards de Eventos*/
-  .event-card {
-    grid-template-rows: 2fr 0.8fr 0.5fr;
-
-  }
-
-
 }
 
+/* ==================== NOVAS REGRAS PARA MOBILE FIRST ==================== */
 
+/*------------------------ MEDIA QUERIES Tela 760px ------------------------*/
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column; /* Coloca os elementos em coluna */
+    align-items: center; /* Centraliza os elementos */
+    gap: 20px; /* Espaço entre os elementos */
+  }
 
+  .water-wrapper, .bomba-de-agua {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 300px; /* Limita a largura máxima */
+  }
 
+  .voltimetro, .amperimetro {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 300px; /* Limita a largura máxima */
+  }
 
+  /* Ajustes para o gráfico de nível de água */
+  .graficos {
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 100%; /* Limita a largura máxima */
+  }
 
+  #graficoNiveis {
+    width: 100% !important; /* Garante que o gráfico ocupe toda a largura */
+    height: auto !important; /* Ajusta a altura automaticamente */
+  }
+}

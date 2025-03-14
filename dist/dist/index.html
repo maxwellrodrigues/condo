@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- ORIGINAL-->
 <html lang="pt-br">
 
 <head>
-  <title>Aplicação de monitoramento Bloco 3</title>
+  <title>Aplicação de monitoramento e Visão Geral</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">git status
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Incluindo scripts JavaScript de módulos. -->
   <script type="module" src="js/app.js"></script>
-  <<!--<script type="module" src="js/busca.js"></script> REMOVER -->
+  <!--<script type="module" src="js/busca.js"></script> REMOVER -->
   <script type="module" src="js/botoes.js"></script>
 
   <!-- Incluindo arquivo CSS para estilos. -->
@@ -16,10 +16,13 @@
 
   <!-- Incluindo scripts JavaScript de módulos dos blocos. -->
   <script type="module" src="js/config_db_supabase_blocos.js"></script>
+  <script type="module" src="js/script_bloco1.js"></script>
+  <script type="module" src="js/script_bloco2.js"></script>
   <script type="module" src="js/script_bloco3.js"></script>
+  <script type="module" src="js/script_bloco_unificados.js"></script>
 
   <!-- Incluindo scripts JavaScript e CSS de módulos dos Gráficos blocos. -->
-  <script type="module" src="js/grafico_bloco3.js"></script>
+  <script type="module" src="js/graficos.js"></script>
   <link rel="stylesheet" href="css/grafico.css">
 
   <!-- Importação da biblioteca Chart.js -->
@@ -30,7 +33,6 @@
 
   <!-- Adicionando a biblioteca Boxicons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
 <!-- Definindo a classe 'darkmode' para o corpo do documento. -->
@@ -93,17 +95,136 @@
 </nav>
 
 
+
 <!----------------- Seção principal do conteúdo, incluindo elementos de interação e layout. ------------------>
 <section class="content">
   <div class="left-content">
 
+    <h1>VISÃO GERAL</h1>
 
-
-    <!------------------------------------  Constrói cenário e cards de próximos eventos  --------------------->
-
+    <!------------------------------------  Constrói cenárioS e cards de monitoramento  --------------------->
     <!--  CARD 1 -->
     <div class="upcoming-events">
-      <h1>MONITORAMENTO BLOCO  3</h1>
+      <h1>MONITORAMENTO BLOCO 1</h1>
+      <div class="event-container">
+
+        <!--  Constrói cenário de monitoramento CARD 1  -->
+        <div class="card event-card">
+          <div class="event-header">
+            <!----------------------------------------------BLOCO 1------------------------------------------------------>
+            <div class="container" id="bloco1">
+              <!-- Criação e gestão para imagens da Caixa d'Água -->
+              <div class="linha-superior">
+                <div class="water-wrapper">
+                  <div class="water-container">
+                    <div class="level-indicator"></div>
+                    <div class="water" id="water-level1"></div>
+                  </div>
+                  <div class="status-nivel-de-agua">
+                    <div class="status-nivel">Nível de água em:</div>
+                    <div class="capsula-nivel"></div>
+                  </div>
+                </div>
+
+                <div class="bomba-de-agua">
+                  <div class="bomba-1"></div>
+                  <div class="status-bomba-de-agua-1">
+                    <div class="status-bomba-1">Status da Bomba 1:</div>
+                    <div class="capsula-status"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="linha-inferior">
+                <div class="amperimetro">
+                  <div class="escala-amperímetro">
+                    <div class="ponteiro-amperimetro" id="ponteiro-amperimetro1"></div>
+                  </div>
+                  <div class="status-amperimetro-1">
+                    <div class="capsula-amperimetro"></div>
+                  </div>
+                </div>
+
+                <div class="voltimetro">
+                  <div class="escala-voltimetro">
+                    <div class="ponteiro-voltimetro" id="ponteiro-voltimetro1"></div>
+                  </div>
+                  <div class="status-voltimetro-1">
+                    <div class="capsula-voltimetro"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!----------------------------------------------FIM 1------------------------------------------------------>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--  CARD 2 -->
+    <div class="upcoming-events">
+      <h1>MONITORAMENTO BLOCO 2</h1>
+      <div class="event-container">
+
+        <!--  originalmente insere a figura -->
+        <div class="card event-card">
+          <div class="event-header">
+            <!----------------------------------------------BLOCO 2------------------------------------------------------>
+            <div class="container" id="bloco2">
+              <!-- Criação e gestão para imagens da Caixa d'Água -->
+              <div class="linha-superior">
+                <div class="water-wrapper">
+                  <div class="water-container">
+                    <div class="level-indicator"></div>
+                    <div class="water" id="water-level2"></div>
+                  </div>
+                  <div class="status-nivel-de-agua">
+                    <div class="status-nivel">Nível de água em:</div>
+                    <div class="capsula-nivel"></div>
+                  </div>
+                </div>
+
+                <div class="bomba-de-agua">
+                  <div class="bomba-1"></div>
+                  <div class="status-bomba-de-agua-1">
+                    <div class="status-bomba-1">Status da Bomba 2:</div>
+                    <div class="capsula-status"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="linha-inferior">
+                <div class="amperimetro">
+                  <div class="escala-amperímetro">
+                    <div class="ponteiro-amperimetro" id="ponteiro-amperimetro2"></div>
+                  </div>
+                  <div class="status-amperimetro-1">
+                    <div class="capsula-amperimetro"></div>
+                  </div>
+                </div>
+
+                <div class="voltimetro">
+                  <div class="escala-voltimetro">
+                    <div class="ponteiro-voltimetro" id="ponteiro-voltimetro2"></div>
+                  </div>
+                  <div class="status-voltimetro-1">
+                    <div class="capsula-voltimetro"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!----------------------------------------------FIM 2------------------------------------------------------>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--  CARD 3 -->
+    <div class="upcoming-events">
+      <h1>MONITORAMENTO BLOCO 3</h1>
       <div class="event-container">
         <!--  originalmente insere a figura -->
         <div class="card event-card">
@@ -160,33 +281,26 @@
     </div>
 
 
-
-
-    <!--  CARD 2 -->
+    <!--  CARD 4 - Gráfico do nivel de água dos 3 Blocos -->
     <div class="upcoming-events">
-      <h1>Gráfico Nível de Água</h1>
+      <h1>NÍVEL DE ÁGUA NAS ÚLTIMAS 24H</h1>
       <div class="event-container">
         <!--  originalmente insere a figura -->
         <div class="card event-card1">
           <div class="event-header">
-            <!----------------------------------------------GRÁFICO BLOCO 3----------------------------------------------->
-            <!-- Gráfico Nível da Água -->
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-8 chart-container grafico-nivel">
-                <div class="graficos" id="blocos">
-                  <canvas id="graficoNiveis"></canvas>
-                </div>
-              </div>
+            <!----------------------------------------------NÍVEL AGUA BLOCOS 1,2 e 3------------------------------------------------------>
+
+            <div class="graficos" id="blocos">
+              <canvas id="graficoNiveis"></canvas>
             </div>
-            <!----------------------------------------FIM GRÁFICO BLOCO 3------------------------------------------------->
+
+            <!----------------------------------------------FIM NÍVEL ÁGUA DOS BLOCOS------------------------------------------------------>
+
           </div>
         </div>
       </div>
     </div>
-
-    <!--  CARD 3 -->
-
-
+    <!-- Área do código para criação do comentários e avaliações do Past Event Reviews -->
   </div>
 
 
@@ -219,6 +333,7 @@
           <canvas id="doughnut"></canvas>
           <ul></ul>
         </div>
+
       </div>
     </div>
 
