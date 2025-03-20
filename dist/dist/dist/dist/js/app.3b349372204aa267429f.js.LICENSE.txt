@@ -1,3 +1,0 @@
-//! Active Navbar Item
-
-//! Criação do gráfico Chart JS

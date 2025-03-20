@@ -1,1 +1,0 @@
-//! Essa função filtra card favoritado
