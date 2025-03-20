@@ -111,6 +111,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// JavaScript para controlar o menu hambúrguer
+const mobileMenu = document.getElementById('mobile-menu');
+const mainMenu = document.getElementById('main-menu');
+
+// Cria o overlay dinamicamente
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+document.body.appendChild(overlay);
+
+// Abrir/fechar o menu ao clicar no botão de hambúrguer
+mobileMenu.addEventListener('click', (event) => {
+  event.stopPropagation(); // Impede que o clique se propague para o documento
+  mainMenu.classList.toggle('active');
+  overlay.style.display = mainMenu.classList.contains('active') ? 'block' : 'none'; // Mostra/esconde o overlay
+});
+
+// Fechar o menu ao clicar no overlay
+overlay.addEventListener('click', () => {
+  mainMenu.classList.remove('active');
+  overlay.style.display = 'none'; // Esconde o overlay
+});
+
+// Fechar o menu ao clicar fora dele
+document.addEventListener('click', (event) => {
+  if (!mainMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+    mainMenu.classList.remove('active');
+    overlay.style.display = 'none'; // Esconde o overlay
+  }
+});
+
+
 
 //! Essa função filtra card favoritado
 

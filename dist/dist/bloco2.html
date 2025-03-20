@@ -5,6 +5,7 @@
   <title>Aplicação de monitoramento Bloco 2</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Incluindo scripts JavaScript de módulos. -->
   <script type="module" src="js/app.js"></script>
   <!--<script type="module" src="js/busca.js"></script> REMOVER -->
@@ -36,8 +37,15 @@
 <!-- Definindo a classe 'darkmode' para o corpo do documento. -->
 <body class="darkmode">
 
+<!-- Botão de menu hambúrguer -->
+<div class="menu-toggle" id="mobile-menu">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</div>
+
 <!------------------------- CRIA UMA SESSÃO QUE CONTEM LINK (MENU) PARA DEMAIS PÁGINAS DO SITE ----------------------->
-<nav class="main-menu">
+<nav id="main-menu" class="main-menu">
   <!-- Cria a DIV de informações do Condomínio, incluindo imagem e nome. -->
   <div>
     <div class="condominio-info">
