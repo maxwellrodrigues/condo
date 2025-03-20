@@ -575,16 +575,16 @@ h1 {
   }
 
   .water {
-    width: 100%; /* Ajuste a largura da água para cobrir toda a caixa */
-    height: 50%; /* Altura inicial da água */
+    width: 100%; /* Mantém a largura fixa */
+    height: 50%; /* Controlada pelo JS */
     background-image: url("../img/agua.svg");
     background-repeat: no-repeat;
-    background-size: 100% 100%; /* Preenche o contêiner */
+    background-size: 100% auto; /* 📌 Mantém a largura total e ajusta apenas a altura */
     background-position: bottom;
     position: absolute;
     bottom: 0;
-    left: 0; /* Remove o posicionamento centralizado */
-    transform: none; /* Remove a transformação */
+    left: 0;
+    transform: none;
     transition: height 1s ease-in-out;
   }
 
